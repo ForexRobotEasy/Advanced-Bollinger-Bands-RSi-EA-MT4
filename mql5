@@ -1,0 +1,119 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                         Advanced Bollinger Bands RSI EA MT4 |
+//|                                             https://forexroboteasy.com |
+//|                                                      Forex Robot Easy Team |
+//+------------------------------------------------------------------+
+#property copyright 'Forex Robot Easy Team'
+#property link      'https://forexroboteasy.com'
+#property version   '1.00'
+#property strict
+
+// Input parameters
+input double StopLossFixedPips = 50.0; // Fixed stop loss in pips
+input double TakeProfitMiddleBB = 0.0; // Take profit based on middle BB line
+input double RiskToRewardRatio = 2.0; // Risk to reward ratio for take profit
+input double AdditionalTP1 = 0.0; // Additional take profit option 1
+input double AdditionalTP2 = 0.0; // Additional take profit option 2
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Add initialization code here
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Add deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                            |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Add trading logic here
+
+    // Check if both indicators indicate overbought or oversold conditions
+    if(IsOverbought() && IsOversold())
+    {
+        // Generate a signal to buy or sell
+        if(CanBuy())
+        {
+            Buy();
+        }
+        else if(CanSell())
+        {
+            Sell();
+        }
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Check if the market is overbought                                |
+//+------------------------------------------------------------------+
+bool IsOverbought()
+{
+    // Add code to check if the market is overbought
+
+    return false; // Placeholder
+}
+
+//+------------------------------------------------------------------+
+//| Check if the market is oversold                                  |
+//+------------------------------------------------------------------+
+bool IsOversold()
+{
+    // Add code to check if the market is oversold
+
+    return false; // Placeholder
+}
+
+//+------------------------------------------------------------------+
+//| Check if it is allowed to buy                                    |
+//+------------------------------------------------------------------+
+bool CanBuy()
+{
+    // Add code to check if it is allowed to buy
+
+    return true; // Placeholder
+}
+
+//+------------------------------------------------------------------+
+//| Check if it is allowed to sell                                   |
+//+------------------------------------------------------------------+
+bool CanSell()
+{
+    // Add code to check if it is allowed to sell
+
+    return true; // Placeholder
+}
+
+//+------------------------------------------------------------------+
+//| Execute a buy order                                              |
+//+------------------------------------------------------------------+
+void Buy()
+{
+    // Add code to execute a buy order
+}
+
+//+------------------------------------------------------------------+
+//| Execute a sell order                                             |
+//+------------------------------------------------------------------+
+void Sell()
+{
+    // Add code to execute a sell order
+}
+
+//+------------------------------------------------------------------+
+//| Custom functions for Bollinger Bands and RSI                     |
+//| Add the necessary code to implement the BB & RSI strategy        |
+//+------------------------------------------------------------------+
+
